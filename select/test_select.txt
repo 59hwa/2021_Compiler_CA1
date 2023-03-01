@@ -1,0 +1,16 @@
+
+<<<CORRECT>>>
+select a from b; >> correct
+select * from DNI where note >=10 and note <= 18; >> correct
+select * from DNI where a=5 group by name; >> correct
+select * from DNI where a=5 group by name having b=2; >> correct
+select * from DNI where a=5 group by name having b=2 order by * asc; >> correct
+select * from DNI where a=5 group by name having b=2 order by name desc; >> correct
+
+
+<<<ERROR>>>
+select ! from b; >> lexical error
+select ;  >> syntax error
+select * from DNI where ; >> syntax error
+select * from DNI where a=5 group by name having b=2 order by; >> syntax error
+select * from DNI where a=5 group by; >> syntax error

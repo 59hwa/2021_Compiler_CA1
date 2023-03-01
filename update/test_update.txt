@@ -1,0 +1,31 @@
+<<<CORRECT>>>
+
+
+UPDATE table_name SET column1 = 'value1' WHERE column1='asa'; >> correct
+
+update table
+set col1 = 'dsds'
+WHERE col2 = 'abc'; >>correct
+
+UPDATE table_name SET column1 = 1, column2 = 2.767, 
+column3=true WHERE column1= 8 AND column4 = "asas";  >> correct
+
+update table_name set column1 = DEFAULT;  >> correct
+
+
+UpDATe table 
+set `column 1` = LOWER('val'), `column 2` = MIN(column2)
+wherE column1 = "val"; >> correct
+
+<<<<ERROR>>>>>
+
+Update ! Set column1=3; >> lexical error
+
+Update a Set column1=!; >> lexical error
+
+Update table_name set column1; >> syntax error
+
+UpdATe table_name SeT column1 = 'value1' wHeRe column1; >> syntax error
+
+UPDATE table_name SET column1 = "val" WHERE column2 + "val"; syntax error
+
